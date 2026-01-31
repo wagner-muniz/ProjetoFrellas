@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Frellas Hamburguer | Wagner Muniz</title>
+</head>
+
+<body>
+    <header>
+        <a href="#" class="logo">🍔 Frellas Burger</a>
+        <nav>
+            <a href="#">Início</a>
+            <a href="#cardapio">Cardápio</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#contato">Contato</a>
+        </nav>
+        <div class="header-actions">
+            <button id="cart-btn" class="cart-btn">
+                🛒 Carrinho
+                <span id="cart-count" class="cart-count">0</span>
+            </button>
+            <a href="#cardapio" class="btn">Peça Agora</a>
+        </div>
+    </header>
+
+    <!-- Sidebar do Carrinho -->
+    <div id="cart-sidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h2>Seu Carrinho</h2>
+            <button id="close-cart" class="close-btn">✕</button>
+        </div>
+        <div id="cart-items" class="cart-items">
+            <p class="empty-cart">Seu carrinho está vazio</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>Total:</strong>
+                <span id="cart-total">R$ 0,00</span>
+            </div>
+            <button id="checkout-btn" class="btn" style="width: 100%;">Finalizar Pedido</button>
+        </div>
+    </div>
+    <div id="cart-overlay" class="cart-overlay"></div>
+
+    <main>
+        <section id="home" class="hero-wrapper">
+            <article class="hero">
+                <div>
+                    <h1>O Melhor Hamburguer da Cidade</h1>
+                    <p>Ingredientes frescos, receitas especiais e entrega rápida. Peça agora e receba em até 40 minutos!</p>
+                    <nav class="hero-buttons">
+                        <a href="#cardapio" class="btn">Ver cardápio</a>
+                        <a href="https://wa.me/5577981001595" class="btn btn-outline">📲 WhatsApp</a>
+                    </nav>
+                    <ul class="hero-stats">
+                        <li><strong>+500</strong> Cliente felizes</li>
+                        <li><strong>4.9</strong> Avaliação ⭐</li>
+                        <li><strong>40min</strong> Ou seu dinheiro de volta</li>
+                    </ul>
+                </div>
+
+                <img alt="hamburger"
+                    src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=999&auto=format&fit=crop">
+            </article>
+        </section>
+
+        <section id="cardapio" class="cardapio">
+            <h2>Nosso Cardápio</h2>
+            <p>Escolha seu favorito e faça seu pedido pelo WhatsApp</p>
+
+            <ul class="menu-grid">
+
+                <!-- Burger Clássico -->
+                <li>
+                    <img src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?w=400&h=300&fit=crop" alt="Burger Clássico">
+                    <span class="badge">Mais Vendido</span>
+                    <h3>Burger Clássico</h3>
+                    <p>Pão brioche, 180g de carne, queijo cheddar, alface, tomate e molho especial</p>
+
+                    <div class="adicionais">
+                        <h4>Adicionais</h4>
+                        <select name="add" class="adicional-select">
+                            <option value="0">Sem adicional</option>
+                            <option value="5">Bacon (+ R$ 5)</option>
+                            <option value="3">Queijo (+ R$ 3)</option>
+                            <option value="4">Ovo (+ R$ 4)</option>
+                        </select>
+                    </div>
+
+                    <div class="quantidade-section">
+                        <label>Quantidade:</label>
+                        <input type="number" class="qty-input" value="1" min="1" max="10">
+                    </div>
+
+                    <strong class="price">R$ 28,90</strong>
+                    <button class="btn add-to-cart" data-name="Burger Clássico" data-price="28.90">Adicionar ao Carrinho</button>
+                </li>
+
+                <!-- Burger Bacon -->
+                <li>
+                    <img src="https://images.unsplash.com/photo-1594212699903-ec8a3eca50f5?w=400&h=300&fit=crop" alt="Burger Bacon">
+                    <h3>Burger Bacon</h3>
+                    <p>Pão brioche, 180g de carne, bacon crocante, queijo, cebola caramelizada</p>
+
+                    <div class="adicionais">
+                        <h4>Adicionais</h4>
+                        <select name="add" class="adicional-select">
+                            <option value="0">Sem adicional</option>
+                            <option value="5">Bacon (+ R$ 5)</option>
+                            <option value="3">Queijo (+ R$ 3)</option>
+                            <option value="4">Ovo (+ R$ 4)</option>
+                        </select>
+                    </div>
+
+                    <div class="quantidade-section">
+                        <label>Quantidade:</label>
+                        <input type="number" class="qty-input" value="1" min="1" max="10">
+                    </div>
+
+                    <strong class="price">R$ 34,90</strong>
+                    <button class="btn add-to-cart" data-name="Burger Bacon" data-price="34.90">Adicionar ao Carrinho</button>
+                </li>
+
+                <!-- Burger Duplo -->
+                <li>
+                    <img src="https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?w=400&h=300&fit=crop" alt="Burger Duplo">
+                    <span class="badge hot">Novidade</span>
+                    <h3>Burger Duplo</h3>
+                    <p>Pão brioche, 2x 180g de carne, dobro de queijo, bacon e molho barbecue</p>
+
+                    <div class="adicionais">
+                        <h4>Adicionais</h4>
+                        <select name="add" class="adicional-select">
+                            <option value="0">Sem adicional</option>
+                            <option value="5">Bacon (+ R$ 5)</option>
+                            <option value="3">Queijo (+ R$ 3)</option>
+                            <option value="4">Ovo (+ R$ 4)</option>
+                        </select>
+                    </div>
+
+                    <div class="quantidade-section">
+                        <label>Quantidade:</label>
+                        <input type="number" class="qty-input" value="1" min="1" max="10">
+                    </div>
+
+                    <strong class="price">R$ 42,90</strong>
+                    <button class="btn add-to-cart" data-name="Burger Duplo" data-price="42.90">Adicionar ao Carrinho</button>
+                </li>
+
+                <!-- Burger Veggie -->
+                <li>
+                    <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=400&h=300&fit=crop" alt="Burger Veggie">
+                    <h3>Burger Veggie</h3>
+                    <p>Pão integral, hambúrguer de grão de bico, queijo, rúcula e maionese verde</p>
+
+                    <div class="adicionais">
+                        <h4>Adicionais</h4>
+                        <select name="add" class="adicional-select">
+                            <option value="0">Sem adicional</option>
+                            <option value="5">Bacon (+ R$ 5)</option>
+                            <option value="3">Queijo (+ R$ 3)</option>
+                            <option value="4">Ovo (+ R$ 4)</option>
+                        </select>
+                    </div>
+
+                    <div class="quantidade-section">
+                        <label>Quantidade:</label>
+                        <input type="number" class="qty-input" value="1" min="1" max="10">
+                    </div>
+
+                    <strong class="price">R$ 32,90</strong>
+                    <button class="btn add-to-cart" data-name="Burger Veggie" data-price="32.90">Adicionar ao Carrinho</button>
+                </li>
+
+                <!-- Batata Frita -->
+                <li>
+                    <img src="https://images.unsplash.com/photo-1630384060421-cb20d0e0649d?w=400&h=300&fit=crop" alt="Batata Frita">
+                    <h3>Batata Frita</h3>
+                    <p>Porção generosa de batatas fritas crocantes com sal e temperos especiais</p>
+
+                    <div class="adicionais">
+                        <h4>Adicionais</h4>
+                        <select name="add" class="adicional-select">
+                            <option value="0">Sem adicional</option>
+                            <option value="5">Com Bacon (+ R$ 5)</option>
+                            <option value="3">Com Queijo (+ R$ 3)</option>
+                            <option value="4">Com Cheddar(+ R$ 4)</option>
+                        </select>
+                    </div>
+
+                    <div class="quantidade-section">
+                        <label>Quantidade:</label>
+                        <input type="number" class="qty-input" value="1" min="1" max="10">
+                    </div>
+
+                    <strong class="price">R$ 18,90</strong>
+                    <button class="btn add-to-cart" data-name="Batata Frita" data-price="18.90">Adicionar ao Carrinho</button>
+                </li>
+
+                <!-- Refrigerante -->
+                <li>
+                    <img src="https://imagens.jotaja.com/produtos/78565ea2-23ac-4ef5-91a9-25565ccedda4.jpg" alt="Refrigerante-lata">
+                    <h3>Refrigerante Lata</h3>
+                    <p>Refrigerante gelado em lata de 350ml. Diversos sabores disponíveis</p>
+
+                    <div class="adicionais">
+                        <h4>Sabores</h4>
+                        <select name="add" class="adicional-select">
+                            <option value="0">Nenhum</option>
+                            <option value="0">Coca-Cola</option>
+                            <option value="2">Guaraná</option>
+                            <option value="3">Fanta Laranja</option>
+                            <option value="2">Sprite</option>
+                        </select>
+                    </div>
+
+                    <div class="quantidade-section">
+                        <label>Quantidade:</label>
+                        <input type="number" class="qty-input" value="1" min="1" max="10">
+                    </div>
+
+                    <strong class="price">R$ 6,90</strong>
+                    <button class="btn add-to-cart" data-name="Refrigerante Lata" data-price="6.90">Adicionar ao Carrinho</button>
+                </li>
+
+            </ul>
+        </section>
+        <section>
+            <h2>Sobre nós</h2>
+        </section>
+    </main>
+
+    <script>
+        if (localStorage.getItem("logado") !== "true") {
+            window.location.href = "../login/login.html";
+        }
+
+        // Sistema de Carrinho
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        const cartBtn = document.getElementById('cart-btn');
+        const closeCartBtn = document.getElementById('close-cart');
+        const cartSidebar = document.getElementById('cart-sidebar');
+        const cartOverlay = document.getElementById('cart-overlay');
+        const cartItemsContainer = document.getElementById('cart-items');
+        const cartTotalElement = document.getElementById('cart-total');
+        const cartCountElement = document.getElementById('cart-count');
+        const checkoutBtn = document.getElementById('checkout-btn');
+
+        // Abrir/Fechar carrinho
+        cartBtn.addEventListener('click', () => {
+            cartSidebar.classList.add('active');
+            cartOverlay.classList.add('active');
+        });
+
+        closeCartBtn.addEventListener('click', () => {
+            cartSidebar.classList.remove('active');
+            cartOverlay.classList.remove('active');
+        });
+
+        cartOverlay.addEventListener('click', () => {
+            cartSidebar.classList.remove('active');
+            cartOverlay.classList.remove('active');
+        });
+
+        // Adicionar ao carrinho
+        document.querySelectorAll('.add-to-cart').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                const itemName = e.target.dataset.name;
+                const itemPrice = parseFloat(e.target.dataset.price);
+                const qtyInput = e.target.parentElement.querySelector('.qty-input');
+                const quantity = parseInt(qtyInput.value) || 1;
+                const adicionalSelect = e.target.parentElement.querySelector('.adicional-select');
+                const adicionalValue = adicionalSelect ? parseFloat(adicionalSelect.value) : 0;
+
+                const finalPrice = itemPrice + adicionalValue;
+
+                // Adicionar ao carrinho
+                for (let i = 0; i < quantity; i++) {
+                    cart.push({
+                        id: Date.now() + Math.random(),
+                        name: itemName,
+                        price: finalPrice,
+                        adicional: adicionalValue
+                    });
+                }
+
+                localStorage.setItem('cart', JSON.stringify(cart));
+                updateCart();
+                
+                // Feedback visual
+                //alert(`${quantity}x ${itemName} adicionado(s) ao carrinho!`);
+                //qtyInput.value = 1;
+            });
+        });
+
+        // Remover do carrinho
+        function removeFromCart(id) {
+            cart = cart.filter(item => item.id !== id);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCart();
+        }
+
+        // Atualizar exibição do carrinho
+        function updateCart() {
+            cartCountElement.textContent = cart.length;
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p class="empty-cart">Seu carrinho está vazio</p>';
+                cartTotalElement.textContent = 'R$ 0,00';
+                checkoutBtn.disabled = true;
+                return;
+            }
+
+            checkoutBtn.disabled = false;
+            let html = '';
+            let total = 0;
+
+            cart.forEach((item, index) => {
+                total += item.price;
+                html += `
+                    <div class="cart-item">
+                        <div class="item-info">
+                            <strong>${item.name}</strong>
+                            <small>R$ ${item.price.toFixed(2)}</small>
+                        </div>
+                        <button class="remove-btn" onclick="removeCartItem(${item.id})">🗑️</button>
+                    </div>
+                `;
+            });
+
+            cartItemsContainer.innerHTML = html;
+            cartTotalElement.textContent = `R$ ${total.toFixed(2)}`;
+        }
+
+        function removeCartItem(id) {
+            removeFromCart(id);
+        }
+
+        // Finalizar pedido
+        checkoutBtn.addEventListener('click', () => {
+            if (cart.length === 0) return;
+
+            const total = cart.reduce((sum, item) => sum + item.price, 0);
+            const items = cart.map(item => `${item.name} (R$ ${item.price.toFixed(2)})`).join('\n');
+            const message = `Olá! Gostaria de fazer o seguinte pedido:\n\n${items}\n\nTotal: R$ ${total.toFixed(2)}`;
+
+            const whatsappUrl = `https://wa.me/5577981001595?text=${encodeURIComponent(message)}`;
+            window.open(whatsappUrl, '_blank');
+        });
+
+        // Inicializar carrinho ao carregar página
+        updateCart();
+    </script>
+</body>
+
+</html>
